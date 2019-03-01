@@ -74,7 +74,10 @@ namespace Playstation_Error_Code_Checker
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             string path = Environment.CurrentDirectory;
-            File.Delete("Error_Code.xlsx");
+            if (File.Exists(path + "\\Error_Code.xlsx"))
+            {
+                File.Delete("Error_Code.xlsx");
+            }
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
